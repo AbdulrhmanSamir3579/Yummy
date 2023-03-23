@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="Yummy Site" />
+  <meta name="keywords" content="Yummy , موقع اكل" />
+  <title>Yummy</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
+  <!--? ===============  FontAwesome6.2.1 Css File =============== -->
+  <link rel="stylesheet" href="./css/all.min.css" />
+  <!--! Bootstrap Is Horrible -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <!--? ===============  Main Css File =============== -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <aside class="side-bar collapsed" id="sideBar">
+    <div class="menu">
+      <ul class="nav-menu">
+        <li id="search" class="nav-menu-item">Search</li>
+        <li id="categories" class="nav-menu-item">Categories</li>
+        <li id="area" class="nav-menu-item">Area</li>
+        <li id="ingredients" class="nav-menu-item">Ingredients</li>
+        <li id="contact" class="nav-menu-item">Contact Us</li>
+      </ul>
+      <div class="copyrights">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-solid fa-globe"></i>
+        <p class="fs-1">Copyright <span>&copy;</span> 2023 All Rights Reserved.</p>
+      </div>
+    </div>
+
+    <div class="toggler">
+      <div class="logo">
+        <img src="./logo-yummy.png" alt="logo" />
+      </div>
+
+      <div class="toggler-btn">
+        <span class="toggler-icon">
+          <i class="fa-solid fa-bars fa-2x toggler-activate"></i>
+          <i class="fa-solid fa-x fa-2x toggler-close d-none"></i>
+        </span>
+      </div>
+
+      <div class="toggler-contact text-center">
+        <i class="fa-solid fa-globe"></i>
+        <i class="fa-solid fa-share-nodes"></i>
+      </div>
+    </div>
+  </aside>
+
+  <div class="container-fluid">
+    <div id="searchPage" class="container p-5 d-none">
+      <div class="row">
+        <div class="col-md-6"><input id="searchByName" type="text"
+            class="form-control border-2 border-warning shadow fs-3" placeholder="Search By Meal Name"></div>
+        <div class="col-md-6"><input id="searchByletter" type="text"
+            class="form-control border-2 border-danger shadow fs-3" placeholder="Search By Meal First Letter"
+            maxlength="1"></div>
+      </div>
+    </div>
+    <div class="container-fluid row gy-4 m-auto" id="data">
+
+    </div>
+
+    <div id="contactPage" class="contact container-fluid m-auto w-100 d-flex position-relative d-none">
+      <h2 class="contact-header"> Contact Us</h2>
+      <div class="container m-auto">
+        <form class="registration fs-4">
+          <div class="registeration-table row g-1">
+            <div class="col-md-6 text-center">
+              <label for="firstName">
+                <input class="input form-control shadow" placeholder="First Name" type="text" id="firstName"
+                  minlength="3" required />
+
+                <ul class="input-requirements">
+                  <li>At least 3 characters long</li>
+                  <li>
+                    Must only contain letters and numbers (no special
+                    characters)
+                  </li>
+                </ul>
+              </label>
+            </div>
+
+            <div class="col-md-6 text-center">
+              <label for="lastName">
+                <input class="input form-control shadow" placeholder="Last Name" type="text" id="lastName" minlength="3"
+                  required />
+
+                <ul class="input-requirements">
+                  <li>At least 3 characters long</li>
+                  <li>
+                    Must only contain letters and numbers (no special
+                    characters)
+                  </li>
+                </ul>
+              </label>
+            </div>
+
+            <div class="col-md-6 text-center">
+              <label for="email">
+                <input class="input form-control shadow" placeholder="Email" type="text" id="email" minlength="3"
+                  required />
+
+                <ul class="input-requirements">
+                  <li>At least 7 characters long</li>
+                  <li>
+                    emails must end with --@gmail.com (no special characters
+                    except (@))
+                  </li>
+                </ul>
+              </label>
+            </div>
+
+            <div class="col-md-6 text-center">
+              <label for="age">
+                <input class="input form-control shadow" type="text" id="age" minlength="1" maxlength="2" required
+                  placeholder="Age" />
+
+                <ul class="input-requirements">
+                  <li>At least 2 characters long</li>
+                  <li>
+                    age must be between less than 80 (no special characters)
+                  </li>
+                </ul>
+              </label>
+            </div>
+
+            <div class="col-md-6 text-center">
+              <div class="pass"></div>
+              <label for="password">
+                <input class="input form-control shadow password" type="password" id="password" maxlength="100"
+                  minlength="8" required placeholder="Password" />
+
+                <ul class="input-requirements">
+                  <li>
+                    At least 8 characters long (and less than 100 characters)
+                  </li>
+                  <li>Contains at least 1 number</li>
+                  <li>Contains at least 1 lowercase letter</li>
+                  <li>Contains at least 1 uppercase letter</li>
+                  <li>Contains a special character (e.g. @ !)</li>
+                </ul>
+              </label>
+            </div>
+
+            <div class="col-md-6 text-center">
+              <label for="password_repeat">
+                <input class="input form-control shadow" type="password" id="password_repeat" maxlength="100"
+                  minlength="8" required placeholder="Confirm Password" />
+                <ul class="input-requirements">
+                  <li>Password must be matched</li>
+                </ul>
+              </label>
+            </div>
+
+            <br />
+          </div>
+          <div class="col-12 text-center mt-5">
+            <input class="col-md-6 text-center m-auto btn btn-dark fs-3 disabled" type="submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!--! ============ Main Js File ============ -->
+  <script src="./js/jquery-3.6.3.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

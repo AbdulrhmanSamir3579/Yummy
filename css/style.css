@@ -1,0 +1,277 @@
+/*? Basic Reset */
+
+:root {
+  --cold-white: rgb(245, 239, 239);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  background-image: var(--cold-white);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+i {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.max-height{
+  max-height: 100vh;
+}
+/*! --------------------- */
+
+.side-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 370px;
+  z-index: 99;
+  box-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.6);
+  display: flex;
+}
+
+.menu {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 100vh;
+
+  right: 300px;
+  padding: 4rem 0rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.opened {
+  left: 0;
+  transition: all 0.7s;
+}
+
+.collapsed {
+  left: -320px;
+  transition: all 0.7s;
+}
+
+.menu .nav-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu .nav-menu .nav-menu-item {
+  font-size: 1.8rem;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  text-indent: 25px;
+}
+
+.menu .nav-menu .nav-menu-item:hover,
+.menu .nav-menu .nav-menu-item:active {
+  background-color: rgba(255, 188, 63, 0.8);
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu .copyrights {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.menu .copyrights i {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.toggler {
+  padding: 40px 10px;
+  background-color: var(--cold-white);
+  height: 100vh;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-size: 1.5rem;
+}
+
+.toggler-contact i {
+  padding: 4px;
+}
+
+/*? Landing Styling */
+.test {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to right, #f3e0b5, #e3c770);
+}
+
+.contact {
+  height: 100vh;
+  width: 100%;
+}
+
+.contact-header {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.contact-header::after {
+  content: "";
+  width: 150px;
+  height: 6px;
+  background-color: rgba(139, 69, 19, 0.6);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  width: 150px;
+  height: 6px;
+  background-color: rgba(139, 69, 19, 0.6);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.input-requirements {
+  font-size: 1.3rem;
+  font-style: italic;
+  text-align: left;
+  list-style: disc;
+  list-style-position: inside;
+  max-width: 400px;
+  margin: 10px auto;
+  color: rgb(0, 0, 0, 0.8);
+}
+
+.input-requirements li.invalid {
+  color: #e74c3c;
+}
+
+.input-requirements li.valid {
+  color: #2ecc6b;
+}
+
+.input-requirements li.valid:after {
+  display: inline-block;
+  padding-left: 10px;
+  content: "\2713";
+}
+
+input:not([type="submit"]):valid {
+  border-color: #2ecc71;
+}
+
+/* Hide and show related .input-requirements when interacting with input */
+
+input:not([type="submit"])+.input-requirements {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 1s ease-out;
+}
+
+input:not([type="submit"]):hover+.input-requirements,
+input:not([type="submit"]):focus+.input-requirements,
+input:not([type="submit"]):active+.input-requirements {
+  max-height: 1000px;
+  /* any large number (bigger then the .input-requirements list) */
+  transition: max-height 1s ease-in;
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  padding: 0;
+  font-weight: inherit;
+}
+
+.input {
+  height: 50px;
+  width: 30vw;
+  font-size: 2rem;
+  text-indent: 10px;
+}
+
+/*? Meal Info */
+.info {
+  height: 100vh;
+  background-color: var(--cold-white);
+}
+
+#data {
+  max-height: 100vh;
+  overflow-y: scroll;
+  padding: 2rem 6rem;
+}
+
+
+.meal {
+  overflow: hidden;
+}
+
+.meal-caption {
+  position: relative;
+  height: 100%;
+  top: 0%;
+  bottom: -100%;
+  transition: top 0.8s;
+}
+
+.meal:hover .meal-caption {
+  top: -100%;
+}
+
+.meal-caption h3 {
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ingredient{
+  max-height: 250px;
+  overflow: hidden;
+}
